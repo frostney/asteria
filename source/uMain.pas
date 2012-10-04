@@ -18,18 +18,19 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    btnClear: TButton;
     btnNew: TBitBtn;
     btnOpen: TBitBtn;
     btnSave: TBitBtn;
     btnDeploy: TBitBtn;
     btnRun: TBitBtn;
     btnQuit: TBitBtn;
-    btnClear: TButton;
     chbLiveEdit: TCheckBox;
     FontDialog: TFontDialog;
     memOutput: TMemo;
     OpenDialog: TOpenDialog;
     OpenGLControl: TOpenGLControl;
+    pnlOutputButtonBar: TPanel;
     pnlStatus: TPanel;
     pnlOutput: TPanel;
     pnlPreview: TPanel;
@@ -38,6 +39,7 @@ type
     pnlToolbar: TPanel;
     SaveDialog: TSaveDialog;
     Splitter: TSplitter;
+    Splitter1: TSplitter;
     SynCompletion: TSynCompletion;
     SynEdit: TSynEdit;
     SynJScriptSyn: TSynJScriptSyn;
@@ -84,7 +86,9 @@ begin
 
   EditorHelper := TasEditorHelper.Create;
 
+  // Println is needed
   TBESEN(BesenInst).ObjectGlobal.RegisterNativeFunction('println', @EditorHelper.PrintLn, 1, []);
+  TBESEN(BesenInst).ObjectGlobal.RegisterNativeFunction('require', @EditorHelper.Require, 1, []);
 
   ObjWindow:=TBESEN(BesenInst).ObjectGlobal;
   TBESEN(BesenInst).ObjectGlobal.OverwriteData('window', BESENObjectValue(ObjWindow), [bopaWRITABLE,bopaCONFIGURABLE]);
