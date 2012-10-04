@@ -1315,6 +1315,13 @@ procedure TBESEN.ToStringValue(const AValue:TBESENValue;var AResult:TBESENValue)
  end;
 var v:TBESENValue;
 begin
+  if (not Assigned(@AValue)) then
+  begin
+    AResult.ValueType:=bvtSTRING;
+    AResult.Str:='undefined';
+    Exit;
+  end;
+
  case AValue.ValueType of
   bvtUNDEFINED:begin
    AResult.ValueType:=bvtSTRING;
