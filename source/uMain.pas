@@ -10,7 +10,7 @@ uses
   StdCtrls, Buttons,
   BESEN, BESENConstants, BESENObjectGlobal, BESENErrors, BESENStringUtils, BESENObject, BESENValue, BESENObjectPropertyDescriptor, BESENObjectConsole,
   ECMAScriptHarmonyShim,
-  AsteriaGlobal, AsteriaEditorHelper;
+  AsteriaGlobal, AsteriaEditorHelper, AsteriaFileSystem, AsteriaDocument;
 
 type
   TStatusType = (stNone, stError);
@@ -68,6 +68,8 @@ type
 var
   frmMain: TfrmMain;
   EditorHelper: TasEditorHelper;
+  FileSystem: TasFileSystem;
+  Document: TasDocument;
 
 implementation
 
@@ -78,6 +80,8 @@ implementation
 procedure TfrmMain.FormCreate(Sender: TObject);
 var
   ObjWindow: TBESENObject;
+  ObjFileSystem: TBESENObject;
+  ObjDocument: TBESENObject;
 begin
   // Create BESEN instance
   BesenInst := TBesen.Create(COMPAT_JS); //< We want JavaScript compability at all costs
@@ -85,6 +89,8 @@ begin
   BesenInst.RecursionLimit := 128;
 
   EditorHelper := TasEditorHelper.Create;
+  FileSystem := TasFileSystem.Create;
+  Document := TasDocument.Create;
 
   // Println is needed
   TBESEN(BesenInst).ObjectGlobal.RegisterNativeFunction('println', @EditorHelper.PrintLn, 1, []);
@@ -92,6 +98,20 @@ begin
 
   ObjWindow:=TBESEN(BesenInst).ObjectGlobal;
   TBESEN(BesenInst).ObjectGlobal.OverwriteData('window', BESENObjectValue(ObjWindow), [bopaWRITABLE,bopaCONFIGURABLE]);
+
+  ObjFileSystem := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
+  TBESEN(BesenInst).ObjectGlobal.OverwriteData('fs', BESENObjectValue(ObjFileSystem), [bopaWRITABLE,bopaCONFIGURABLE]);
+  TBESEN(BesenInst).GarbageCollector.Add(ObjFileSystem);
+  ObjFileSystem.RegisterNativeFunction('fileExists', @FileSystem.FileExists, 1, []);
+  ObjFileSystem.RegisterNativeFunction('dirExists', @FileSystem.DirExists, 1, []);
+  ObjFileSystem.RegisterNativeFunction('readFile', @FileSystem.ReadFile, 1, []);
+  ObjFileSystem.RegisterNativeFunction('writeFile', @FileSystem.WriteFile, 1, []);
+
+
+  ObjDocument := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
+  TBESEN(BesenInst).ObjectGlobal.OverwriteData('document', BESENObjectValue(ObjDocument), [bopaWRITABLE,bopaCONFIGURABLE]);
+  ObjDocument.RegisterNativeFunction('getElementById', @Document.GetElementById, 1, []);
+
 
   TBESEN(BesenInst).InjectObject('console', BESENConvertToUTF8(BESENObjectConsoleSource));
   TBESEN(BesenInst).Execute(BESENConvertToUTF8(ECMAScriptHarmonyShimSource));

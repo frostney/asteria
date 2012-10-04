@@ -48,7 +48,8 @@ Thumbs.db
 *.out
 bin/*.html
 bin/*.a
-bin/*.dbg
+bin/*.lfm
+*.dbg
 bin/*.or
 bin/main
 bin/myapp

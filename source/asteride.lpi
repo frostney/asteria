@@ -41,7 +41,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="8">
       <Unit0>
         <Filename Value="asteride.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -75,6 +75,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AsteriaCore"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="AsteriaFileSystem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AsteriaFileSystem"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="AsteriaDocument.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AsteriaDocument"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
