@@ -1208,6 +1208,13 @@ procedure TBESEN.ToBooleanValue(const AValue:TBESENValue;var AResult:TBESENValue
 var bo:TBESENObject;
     vo:TBESENValue;
 begin
+  if (not Assigned(@AValue)) then
+  begin
+    AResult.ValueType:=bvtBOOLEAN;
+    AResult.Bool:=false;
+    Exit;
+  end;
+
  case AValue.ValueType of
   bvtUNDEFINED:begin
    AResult.ValueType:=bvtBOOLEAN;
@@ -1260,6 +1267,13 @@ procedure TBESEN.ToNumberValue(const AValue:TBESENValue;var AResult:TBESENValue)
 const BooleanToNumber:array[boolean] of TBESENNumber=(0.0,1.0);
 var v:TBESENValue;
 begin
+  if (not Assigned(@AValue)) then
+  begin
+    AResult.ValueType:=bvtNUMBER;
+    int64(pointer(@AResult.Num)^):=int64(pointer(@BESENDoubleNAN)^);
+    Exit;
+  end;
+
  case AValue.ValueType of
   bvtUNDEFINED:begin
    AResult.ValueType:=bvtNUMBER;
@@ -1366,6 +1380,12 @@ procedure TBESEN.ToObjectValue(const AValue:TBESENValue;var AResult:TBESENValue)
   BESENThrowTypeError('Bad to object conversation');
  end;
 begin
+  if (not Assigned(@AValue)) then
+  begin
+    raise EBESENTypeError.Create('ToObjectValue undefined');
+    Exit;
+  end;
+
  case AValue.ValueType of
   bvtUNDEFINED:begin
    raise EBESENTypeError.Create('ToObjectValue undefined');
