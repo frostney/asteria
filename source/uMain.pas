@@ -27,6 +27,7 @@ type
     btnQuit: TBitBtn;
     chbLiveEdit: TCheckBox;
     FontDialog: TFontDialog;
+    ListBox1: TListBox;
     memOutput: TMemo;
     OpenDialog: TOpenDialog;
     OpenGLControl: TOpenGLControl;
@@ -98,6 +99,9 @@ begin
 
   ObjWindow:=TBESEN(BesenInst).ObjectGlobal;
   TBESEN(BesenInst).ObjectGlobal.OverwriteData('window', BESENObjectValue(ObjWindow), [bopaWRITABLE,bopaCONFIGURABLE]);
+  ObjWindow.OverwriteData('asteria', BESENBooleanValue(true), [bopaWRITABLE,bopaCONFIGURABLE]);
+  ObjWindow.OverwriteData('innerWidth', BESENNumberValue(OpenGLControl.Width), []);
+  ObjWindow.OverwriteData('innerHeight', BESENNumberValue(OpenGLControl.Height), []);
 
   ObjFileSystem := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
   TBESEN(BesenInst).ObjectGlobal.OverwriteData('fs', BESENObjectValue(ObjFileSystem), [bopaWRITABLE,bopaCONFIGURABLE]);
@@ -105,12 +109,13 @@ begin
   ObjFileSystem.RegisterNativeFunction('fileExists', @FileSystem.FileExists, 1, []);
   ObjFileSystem.RegisterNativeFunction('dirExists', @FileSystem.DirExists, 1, []);
   ObjFileSystem.RegisterNativeFunction('readFile', @FileSystem.ReadFile, 1, []);
-  ObjFileSystem.RegisterNativeFunction('writeFile', @FileSystem.WriteFile, 1, []);
+  ObjFileSystem.RegisterNativeFunction('writeFile', @FileSystem.WriteFile, 2, []);
 
 
   ObjDocument := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
   TBESEN(BesenInst).ObjectGlobal.OverwriteData('document', BESENObjectValue(ObjDocument), [bopaWRITABLE,bopaCONFIGURABLE]);
   ObjDocument.RegisterNativeFunction('getElementById', @Document.GetElementById, 1, []);
+  ObjDocument.RegisterNativeFunction('addEventListener', @Document.AddEventListener, 3, []);
 
 
   TBESEN(BesenInst).InjectObject('console', BESENConvertToUTF8(BESENObjectConsoleSource));
@@ -163,7 +168,7 @@ begin
     on e: EBESENError do
         ShowStatusMessage(Format('%s ( %s | Line %d ): %s', [e.Name, '', TBESEN(BesenInst).LineNumber, e.Message]), stError);
 
-    on e: exception do
+    on e: Exception do
         ShowStatusMessage(Format('%s ( %s | Line %d ): %s', ['Exception', '', TBESEN(BesenInst).LineNumber, e.Message]), stError);
   end;
 end;

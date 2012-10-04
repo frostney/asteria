@@ -41,7 +41,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="asteride.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -85,18 +85,20 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AsteriaDocument"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="AsteriaWindow.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AsteriaWindow"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
-    <Target>
-      <Filename Value="asteride"/>
-    </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <OtherUnitFiles Value="..\lib\BESEN;..\lib\OpenGL;..\lib\Vampyre"/>
-      <UnitOutputDirectory Value="C:\Users\Johannes Stein\Dropbox\Github\asteria\bin"/>
+      <UnitOutputDirectory Value="..\bin"/>
     </SearchPaths>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>

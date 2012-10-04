@@ -709,6 +709,14 @@ object frmMain: TfrmMain
             TabOrder = 4
           end
         end
+        object ListBox1: TListBox
+          Left = 231
+          Height = 80
+          Top = 32
+          Width = 100
+          ItemHeight = 0
+          TabOrder = 2
+        end
       end
       object Splitter1: TSplitter
         Cursor = crVSplit

@@ -14,6 +14,7 @@ type
   public
     constructor Create;
     procedure GetElementById(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
+    procedure AddEventListener(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
   end;
 
 implementation
@@ -26,6 +27,13 @@ begin
 end;
 
 procedure TasDocument.GetElementById(const ThisArgument: TBESENValue;
+  Arguments: PPBESENValues; CountArguments: Integer;
+  var ResultValue: TBESENValue);
+begin
+
+end;
+
+procedure TasDocument.AddEventListener(const ThisArgument: TBESENValue;
   Arguments: PPBESENValues; CountArguments: Integer;
   var ResultValue: TBESENValue);
 begin
