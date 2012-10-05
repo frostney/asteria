@@ -13,7 +13,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="109" Y="10"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,11 +23,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMain"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="89"/>
-        <CursorPos X="119" Y="103"/>
-        <UsageCount Value="35"/>
+        <TopLine Value="128"/>
+        <CursorPos X="98" Y="138"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -39,7 +40,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="17"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -50,7 +51,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="31" Y="27"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -61,7 +62,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="34" Y="5"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -72,19 +73,18 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="5" Y="12"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="AsteriaFileSystem.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="AsteriaFileSystem"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="55"/>
-        <CursorPos X="81" Y="64"/>
-        <UsageCount Value="28"/>
+        <TopLine Value="38"/>
+        <CursorPos X="42" Y="60"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -95,106 +95,106 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="144" Y="17"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
+        <Filename Value="AsteriaWindow.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AsteriaWindow"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8"/>
+        <CursorPos X="58" Y="6"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="..\lib\BESEN\BESENErrors.pas"/>
         <UnitName Value="BESENErrors"/>
         <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
         <TopLine Value="490"/>
         <CursorPos X="26" Y="512"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
+      </Unit9>
+      <Unit10>
         <Filename Value="..\lib\BESEN\BESEN.pas"/>
         <UnitName Value="BESEN"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="317"/>
         <CursorPos X="17" Y="304"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
-      </Unit9>
-      <Unit10>
+      </Unit10>
+      <Unit11>
         <Filename Value="..\lib\BESEN\BESENObjectConsole.pas"/>
         <UnitName Value="BESENObjectConsole"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="86"/>
         <CursorPos X="13" Y="102"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
-      </Unit10>
-      <Unit11>
+      </Unit11>
+      <Unit12>
         <Filename Value="..\lib\BESEN\BESENObject.pas"/>
         <UnitName Value="BESENObject"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="240"/>
-        <CursorPos X="18" Y="261"/>
-        <UsageCount Value="15"/>
+        <TopLine Value="1526"/>
+        <CursorPos X="46" Y="1548"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
-      </Unit11>
-      <Unit12>
+      </Unit12>
+      <Unit13>
         <Filename Value="..\lib\BESEN\BESENValue.pas"/>
         <UnitName Value="BESENValue"/>
         <EditorIndex Value="12"/>
         <WindowIndex Value="0"/>
         <TopLine Value="623"/>
         <CursorPos X="26" Y="644"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="19"/>
         <Loaded Value="True"/>
-      </Unit12>
-      <Unit13>
+      </Unit13>
+      <Unit14>
         <Filename Value="..\lib\BESEN\BESENStringUtils.pas"/>
         <UnitName Value="BESENStringUtils"/>
         <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="87" Y="1"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
-      </Unit13>
-      <Unit14>
+      </Unit14>
+      <Unit15>
         <Filename Value="..\lib\BESEN\BESENTypes.pas"/>
         <UnitName Value="BESENTypes"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
         <TopLine Value="168"/>
         <CursorPos X="6" Y="130"/>
-        <UsageCount Value="14"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
-      </Unit14>
-      <Unit15>
+      </Unit15>
+      <Unit16>
         <Filename Value="C:\lazarus\fpc\2.6.1\source\rtl\win\sysutils.pp"/>
         <UnitName Value="sysutils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="316"/>
         <CursorPos X="22" Y="346"/>
-        <UsageCount Value="11"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="10"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="..\lib\BESEN\BESENObjectPropertyDescriptor.pas"/>
         <UnitName Value="BESENObjectPropertyDescriptor"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="165"/>
         <CursorPos X="47" Y="101"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="AsteriaWindow.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="AsteriaWindow"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="58" Y="6"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -204,7 +204,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="253"/>
         <CursorPos X="18" Y="109"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit18>
       <Unit19>
@@ -214,134 +214,130 @@
         <WindowIndex Value="0"/>
         <TopLine Value="44"/>
         <CursorPos X="6" Y="101"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit19>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
-        <Filename Value="..\lib\BESEN\BESENStringUtils.pas"/>
-        <Caret Line="112" Column="29" TopLine="90"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="103" Column="79" TopLine="83"/>
       </Position1>
       <Position2>
-        <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="22" Column="28" TopLine="1"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="181" Column="105" TopLine="144"/>
       </Position2>
       <Position3>
-        <Filename Value="AsteriaEditorHelper.pas"/>
-        <Caret Line="20" Column="143" TopLine="1"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="154" Column="46" TopLine="87"/>
       </Position3>
       <Position4>
         <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="304" Column="17" TopLine="271"/>
+        <Caret Line="552" Column="123" TopLine="360"/>
       </Position4>
       <Position5>
-        <Filename Value="uMain.pas"/>
-        <Caret Line="94" Column="131" TopLine="77"/>
+        <Filename Value="..\lib\BESEN\BESEN.pas"/>
+        <Caret Line="394" Column="74" TopLine="366"/>
       </Position5>
       <Position6>
-        <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="8" Column="16" TopLine="1"/>
+        <Filename Value="asteride.lpr"/>
+        <Caret Line="10" Column="22" TopLine="1"/>
       </Position6>
       <Position7>
         <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="7" Column="58" TopLine="1"/>
+        <Caret Line="33" Column="19" TopLine="10"/>
       </Position7>
       <Position8>
         <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="51" Column="87" TopLine="6"/>
+        <Caret Line="34" Column="23" TopLine="1"/>
       </Position8>
       <Position9>
         <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="20" Column="15" TopLine="1"/>
+        <Caret Line="24" Column="134" TopLine="1"/>
       </Position9>
       <Position10>
         <Filename Value="uMain.pas"/>
-        <Caret Line="96" Column="64" TopLine="67"/>
+        <Caret Line="121" Column="60" TopLine="82"/>
       </Position10>
       <Position11>
         <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="22" Column="16" TopLine="16"/>
+        <Caret Line="144" Column="100" TopLine="5"/>
       </Position11>
       <Position12>
         <Filename Value="uMain.pas"/>
-        <Caret Line="105" Column="74" TopLine="64"/>
+        <Caret Line="125" Column="66" TopLine="89"/>
       </Position12>
       <Position13>
-        <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="1352" Column="5" TopLine="1313"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="107" Column="47" TopLine="96"/>
       </Position13>
       <Position14>
-        <Filename Value="uMain.pas"/>
-        <Caret Line="113" Column="89" TopLine="83"/>
+        <Filename Value="..\lib\BESEN\BESENObject.pas"/>
+        <Caret Line="261" Column="40" TopLine="227"/>
       </Position14>
       <Position15>
         <Filename Value="uMain.pas"/>
-        <Caret Line="13" Column="73" TopLine="2"/>
+        <Caret Line="115" Column="55" TopLine="99"/>
       </Position15>
       <Position16>
         <Filename Value="uMain.pas"/>
-        <Caret Line="113" Column="76" TopLine="92"/>
+        <Caret Line="114" Column="55" TopLine="98"/>
       </Position16>
       <Position17>
-        <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="1316" Column="42" TopLine="1303"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="115" Column="55" TopLine="99"/>
       </Position17>
       <Position18>
-        <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="1317" Column="17" TopLine="1296"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="117" Column="55" TopLine="101"/>
       </Position18>
       <Position19>
         <Filename Value="uMain.pas"/>
-        <Caret Line="115" Column="80" TopLine="89"/>
+        <Caret Line="118" Column="55" TopLine="102"/>
       </Position19>
       <Position20>
-        <Filename Value="AsteriaDocument.pas"/>
-        <Caret Line="17" Column="31" TopLine="1"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="117" Column="55" TopLine="101"/>
       </Position20>
       <Position21>
         <Filename Value="uMain.pas"/>
-        <Caret Line="102" Column="89" TopLine="90"/>
+        <Caret Line="172" Column="29" TopLine="63"/>
       </Position21>
       <Position22>
         <Filename Value="uMain.pas"/>
-        <Caret Line="103" Column="79" TopLine="83"/>
+        <Caret Line="173" Column="29" TopLine="129"/>
       </Position22>
       <Position23>
         <Filename Value="uMain.pas"/>
-        <Caret Line="181" Column="105" TopLine="144"/>
+        <Caret Line="174" Column="29" TopLine="130"/>
       </Position23>
       <Position24>
-        <Filename Value="..\lib\BESEN\BESENErrors.pas"/>
-        <Caret Line="101" Column="6" TopLine="498"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="173" Column="29" TopLine="129"/>
       </Position24>
       <Position25>
         <Filename Value="uMain.pas"/>
-        <Caret Line="154" Column="46" TopLine="87"/>
+        <Caret Line="174" Column="29" TopLine="130"/>
       </Position25>
       <Position26>
-        <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="552" Column="123" TopLine="360"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="175" Column="29" TopLine="131"/>
       </Position26>
       <Position27>
-        <Filename Value="..\lib\BESEN\BESEN.pas"/>
-        <Caret Line="394" Column="74" TopLine="366"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="174" Column="29" TopLine="130"/>
       </Position27>
       <Position28>
-        <Filename Value="asteride.lpr"/>
-        <Caret Line="10" Column="22" TopLine="1"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="145" Column="120" TopLine="130"/>
       </Position28>
       <Position29>
-        <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="33" Column="19" TopLine="10"/>
+        <Filename Value="uMain.pas"/>
+        <Caret Line="52" Column="16" TopLine="30"/>
       </Position29>
-      <Position30>
-        <Filename Value="AsteriaFileSystem.pas"/>
-        <Caret Line="42" Column="3" TopLine="55"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>

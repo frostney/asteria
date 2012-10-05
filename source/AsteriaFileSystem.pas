@@ -20,6 +20,8 @@ type
 
     procedure ReadFile(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
     procedure WriteFile(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
+
+    procedure Rename(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
   end;
 
   { TasPathModule }
@@ -31,6 +33,7 @@ type
     procedure Join(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
     procedure Basename(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
     procedure Extname(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
+    procedure Relative(const ThisArgument: TBESENValue; Arguments: PPBESENValues; CountArguments: Integer; var ResultValue: TBESENValue);
   end;
 
 implementation
@@ -45,22 +48,37 @@ end;
 procedure TasPathModule.Join(const ThisArgument: TBESENValue;
   Arguments: PPBESENValues; CountArguments: Integer;
   var ResultValue: TBESENValue);
+var
+  i: Integer;
+  NewDir: String;
 begin
+  for i := 0 to CountArguments do
+  begin
+    NewDir := TBESEN(BesenInst).ToStr(Arguments^[i]^) + DirectorySeparator;
+  end;
 
+  ResultValue := BESENStringValue(NewDir);
 end;
 
 procedure TasPathModule.Basename(const ThisArgument: TBESENValue;
   Arguments: PPBESENValues; CountArguments: Integer;
   var ResultValue: TBESENValue);
 begin
-
+  ResultValue := BESENStringValue(SysUtils.ExtractFileName(TBESEN(BesenInst).ToStr(Arguments^[0]^)));
 end;
 
 procedure TasPathModule.Extname(const ThisArgument: TBESENValue;
   Arguments: PPBESENValues; CountArguments: Integer;
   var ResultValue: TBESENValue);
 begin
+  ResultValue := BESENStringValue(SysUtils.ExtractFileExt(TBESEN(BesenInst).ToStr(Arguments^[0]^)));
+end;
 
+procedure TasPathModule.Relative(const ThisArgument: TBESENValue;
+  Arguments: PPBESENValues; CountArguments: Integer;
+  var ResultValue: TBESENValue);
+begin
+  ResultValue := BESENStringValue(SysUtils.ExtractRelativepath(GetCurrentDir(), TBESEN(BesenInst).ToStr(Arguments^[0]^)));
 end;
 
 { TasFileSystem }
@@ -117,6 +135,13 @@ begin
   StringList.SaveToFile(Filename);
 
   StringList.Free;
+end;
+
+procedure TasFileSystem.Rename(const ThisArgument: TBESENValue;
+  Arguments: PPBESENValues; CountArguments: Integer;
+  var ResultValue: TBESENValue);
+begin
+  SysUtils.RenameFile(TBESEN(BesenInst).ToStr(Arguments^[0]^), TBESEN(BesenInst).ToStr(Arguments^[1]^));
 end;
 
 end.

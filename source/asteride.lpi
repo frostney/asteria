@@ -28,6 +28,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
     <RequiredPackages Count="3">
@@ -127,7 +128,7 @@
     </Other>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="6">
+    <Exceptions Count="7">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -146,6 +147,9 @@
       <Item6>
         <Name Value="EBESENTypeError"/>
       </Item6>
+      <Item7>
+        <Name Value="EInterfaceWarning"/>
+      </Item7>
     </Exceptions>
   </Debugging>
-</CONFIG>
+</CONFIG>

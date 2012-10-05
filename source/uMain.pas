@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, OpenGLContext, SynEdit, SynHighlighterJScript,
   SynCompletion, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls,
-  StdCtrls, Buttons,
+  StdCtrls, Buttons, FileCtrl,
   BESEN, BESENConstants, BESENObjectGlobal, BESENErrors, BESENStringUtils, BESENObject, BESENValue, BESENObjectPropertyDescriptor, BESENObjectConsole,
   ECMAScriptHarmonyShim,
   AsteriaGlobal, AsteriaEditorHelper, AsteriaFileSystem, AsteriaDocument;
@@ -21,13 +21,16 @@ type
     btnClear: TButton;
     btnNew: TBitBtn;
     btnOpen: TBitBtn;
+    btnOpen1: TBitBtn;
+    btnInfo: TBitBtn;
     btnSave: TBitBtn;
     btnDeploy: TBitBtn;
     btnRun: TBitBtn;
     btnQuit: TBitBtn;
-    chbLiveEdit: TCheckBox;
+    btnSave1: TBitBtn;
+    btnSave2: TBitBtn;
+    FileListBox1: TFileListBox;
     FontDialog: TFontDialog;
-    ListBox1: TListBox;
     memOutput: TMemo;
     OpenDialog: TOpenDialog;
     OpenGLControl: TOpenGLControl;
@@ -43,9 +46,10 @@ type
     Splitter1: TSplitter;
     SynCompletion: TSynCompletion;
     SynEdit: TSynEdit;
-    SynJScriptSyn: TSynJScriptSyn;
+    SynJScriptSynLight: TSynJScriptSyn;
+    SynJScriptSynDark: TSynJScriptSyn;
     timLoop: TTimer;
-    ToggleBox1: TToggleBox;
+    btnLiveEdit: TToggleBox;
     ToggleBox2: TToggleBox;
     ToggleBox3: TToggleBox;
     ToggleBox4: TToggleBox;
@@ -70,6 +74,7 @@ var
   frmMain: TfrmMain;
   EditorHelper: TasEditorHelper;
   FileSystem: TasFileSystem;
+  PathModule: TasPathModule;
   Document: TasDocument;
 
 implementation
@@ -83,6 +88,7 @@ var
   ObjWindow: TBESENObject;
   ObjFileSystem: TBESENObject;
   ObjDocument: TBESENObject;
+  ObjPath: TBESENObject;
 begin
   // Create BESEN instance
   BesenInst := TBesen.Create(COMPAT_JS); //< We want JavaScript compability at all costs
@@ -108,8 +114,19 @@ begin
   TBESEN(BesenInst).GarbageCollector.Add(ObjFileSystem);
   ObjFileSystem.RegisterNativeFunction('fileExists', @FileSystem.FileExists, 1, []);
   ObjFileSystem.RegisterNativeFunction('dirExists', @FileSystem.DirExists, 1, []);
+  ObjFileSystem.RegisterNativeFunction('exists', @FileSystem.DirExists, 1, []);
   ObjFileSystem.RegisterNativeFunction('readFile', @FileSystem.ReadFile, 1, []);
   ObjFileSystem.RegisterNativeFunction('writeFile', @FileSystem.WriteFile, 2, []);
+  ObjFileSystem.RegisterNativeFunction('rename', @FileSystem.Rename, 2, []);
+
+  ObjPath := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
+  TBESEN(BesenInst).ObjectGlobal.OverwriteData('path', BESENObjectValue(ObjPath), [bopaWRITABLE,bopaCONFIGURABLE]);
+  TBESEN(BesenInst).GarbageCollector.Add(ObjPath);
+  ObjPath.OverwriteData('sep', BESENStringValue(DirectorySeparator));
+  ObjPath.RegisterNativeFunction('join', @PathModule.Join, 100, []);
+  ObjPath.RegisterNativeFunction('basename', @PathModule.Basename, 0, []);
+  ObjPath.RegisterNativeFunction('extname', @PathModule.Extname, 0, []);
+  ObjPath.RegisterNativeFunction('relative', @PathModule.Relative, 0, []);
 
 
   ObjDocument := TBESENObject.Create(BesenInst, TBESEN(BesenInst).ObjectPrototype, false);
@@ -149,7 +166,7 @@ end;
 
 procedure TfrmMain.SynEditChange(Sender: TObject);
 begin
-  if (chbLiveEdit.Checked) then
+  if (btnLiveEdit.Checked) then
     Self.EvaluateCode(SynEdit.Text);
 end;
 
